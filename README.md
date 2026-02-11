@@ -5,7 +5,7 @@ Full-chain template: one source field → JS → API → LLM → translations. E
 ## Structure
 
 ```
-llm-translate/
+LLM-Translate-Template/
 ├── .env.example            # Env vars for LLM (OPENAI_API_KEY, ANTHROPIC_API_KEY, LLM_TRANSLATE_PROVIDER, etc.)
 ├── README.md
 ├── requirements.txt        # fastapi, pydantic, openai, anthropic
