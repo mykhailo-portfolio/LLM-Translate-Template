@@ -52,7 +52,7 @@ llm-translate/
 
 ## Using in your repo
 
-1. Copy `llm-translate/` (or its parts) into your project.
+1. Copy `LLM-Translate-Template/` (or its parts) into your project.
 2. Ensure `llm` is importable from where the API runs (e.g. add template root to `PYTHONPATH` or move `llm` into your app package). Fix the import in `api/translate_router.py` if needed.
 3. Mount the router: `app.include_router(translate_router, prefix="/api", tags=["translate"])`. The full path is then `/api/translate`; the frontend’s `API_TRANSLATE` in `request.js` must match (see docstring in `api/translate_router.py`).
 4. Serve `frontend/` (e.g. static or your existing pages) and set the script’s `API_TRANSLATE` to your base URL if you use another prefix.

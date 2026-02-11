@@ -61,7 +61,7 @@ async def api_translate(body: TranslateRequest) -> dict[str, str]:
     try:
         result = await translate(text=text, source_lang=source_lang, target_langs=target_langs)
         # Optional XSS: before returning, run each value through your sanitize/escape
-        # (see .templates/llm-translate/xss/README.md). Example: result = {k: sanitize(v) for k, v in result.items()}
+        # (see LLM-Translate-Template/xss/README.md). Example: result = {k: sanitize(v) for k, v in result.items()}
         return result
     except Exception as e:
         logger.exception("Translation failed: %s", e)
