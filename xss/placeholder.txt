@@ -1,0 +1,11 @@
+# Placeholder: replace with your sanitize/escape integration
+
+# Backend (Python) — example hook points:
+#   - In translate_router: after await translate(...), run each value through escape_html(your_lib) before returning.
+#   - Or in llm/translate.py: before returning, map values through a sanitize function (optional).
+
+# Frontend (JS) — example:
+#   - In request.js, before setting resultContent.textContent = ... or innerHTML:
+#     use textContent for plain text (safe) or run through your sanitizer if you allow limited HTML.
+
+# No library chosen in this template; add your own (e.g. bleach, DOMPurify, or framework defaults).

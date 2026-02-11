@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Translate – Template</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    select, textarea { width: 100%; margin-top: 0.25rem; padding: 0.5rem; box-sizing: border-box; }
+    textarea { min-height: 120px; resize: vertical; }
+    button { margin-top: 1rem; padding: 0.5rem 1rem; cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: 0.6; }
+    .result { margin-top: 1.5rem; }
+    .result h3 { margin-bottom: 0.5rem; }
+    .result pre { background: #f5f5f5; padding: 1rem; overflow-x: auto; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>LLM Translate</h1>
+  <p>Single source field → API → LLM → translations. For <strong>N fields</strong>: same scheme—repeat blocks or loop over field IDs; keep one textarea per “source” and one result area per target (or one shared result area keyed by field id).</p>
+
+  <label for="source-lang">Source language</label>
+  <select id="source-lang">
+    <option value="en">English</option>
+    <option value="ru">Russian</option>
+    <option value="uk">Ukrainian</option>
+  </select>
+
+  <label for="target-langs">Target languages (comma-separated codes, e.g. ru,uk)</label>
+  <input type="text" id="target-langs" value="ru,uk" placeholder="ru,uk">
+
+  <label for="source-text">Text to translate</label>
+  <textarea id="source-text" placeholder="Enter text..."></textarea>
+
+  <button type="button" id="translate-btn" disabled>Translate</button>
+
+  <div class="result" id="result-area" hidden>
+    <h3>Result</h3>
+    <pre id="result-content"></pre>
+  </div>
+
+  <script type="module" src="js/request.js"></script>
+  <script type="module" src="js/listener.js"></script>
+</body>
+</html>
