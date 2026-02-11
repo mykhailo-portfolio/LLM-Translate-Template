@@ -2,6 +2,8 @@
 
 Full-chain template: one source field → JS → API → LLM → translations. Each part is a separate, pluggable file. No bot, no tokens, no permission checks in the template; optional XSS block included.
 
+**Not a generic “translator”** — there are ready-made solutions for that. This template is for **admin backends** in multi-language setups: when editors create content (e.g. a product name or description) in one language and need it translated into the platform’s other languages without doing it manually. Typical use: product/admin forms where “Translate to all languages” fills target fields via one API call. Integrate this flow into your admin UI and add auth/rate limits as needed.
+
 ## Structure
 
 ```
